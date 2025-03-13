@@ -1,6 +1,17 @@
 # Funlink
-The linker between annotation result and protein database (in developed) 
+The linker between annotation result from fungal genome annotation tools (maker or funannotate) and other databases
+using SQL hierrachical database system
 
-python funlink.py --protein_fasta /data/protein_sequences.fasta --output_db /data/blast_db --query_fasta /data/query_sequences.fasta --blast_output /data/blast_results.tsv --annotation_file /data/annotation_data.tsv --merged_output /data/merged_output.tsv --key1 TransciptID --key2 TranscriptID --uniprot_output /data/uniprot_output.tsv
+usage:
+--protein_fasta: input your reference protein file (should be from UniProt in this version)
+--output_db: input your path to BLASTP database
+--query_fasta: input your path to query protein file (should be from funannotate pipeline)
+--annotation_file: input your path to annotation file (should be from funannotate pipelie)
 
-Used integrated with Funannotate output, blastp and Uniprot DB
+# Funml
+Preprocessing data module and incremental machine learning module using SGDClasasifier to generate the model for prediction of specific condition using the stored data in database
+usage:
+--db_bz2_file: input your database file
+--output_dir input your output_dir
+--metadata_file: input your metadata
+--model_output: input where to stored your model
